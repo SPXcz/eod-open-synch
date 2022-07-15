@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><foxml:digitalObject xmlns:foxml="info:fedora/fedora-system:def/foxml#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" PID="uuid:{UUID}" VERSION="1.1" xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/definitions/1/0/foxml1-1.xsd">
+<foxml:objectProperties>
+<foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="Active"/>
+<foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE="{PAGE_NUMBER}"/>
+<foxml:property NAME="info:fedora/fedora-system:def/model#ownerId" VALUE="fedoraAdmin"/>
+<foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="{DATE}"/>
+<foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="{DATE}"/>
+</foxml:objectProperties>
+<foxml:datastream CONTROL_GROUP="E" ID="IMG_THUMB" STATE="A" VERSIONABLE="false">
+<foxml:datastreamVersion CREATED="{DATE}" ID="IMG_THUMB.0" LABEL="" MIMETYPE="image/jpeg">
+<foxml:contentLocation REF="{THUMB}" TYPE="URL"/>
+</foxml:datastreamVersion>
+</foxml:datastream>
+<foxml:datastream CONTROL_GROUP="E" ID="IMG_PREVIEW" STATE="A" VERSIONABLE="false">
+<foxml:datastreamVersion CREATED="{DATE}" ID="IMG_PREVIEW.0" LABEL="" MIMETYPE="image/jpeg">
+<foxml:contentLocation REF="{PREVIEW}" TYPE="URL"/>
+</foxml:datastreamVersion>
+</foxml:datastream>
+<foxml:datastream CONTROL_GROUP="E" ID="IMG_FULL" STATE="A" VERSIONABLE="false">
+<foxml:datastreamVersion CREATED="{DATE}" ID="IMG_FULL.0" LABEL="" MIMETYPE="image/jpeg">
+<foxml:contentLocation REF="{IMG_FULL}" TYPE="URL"/>
+</foxml:datastreamVersion>
+</foxml:datastream>
+
+<foxml:datastream CONTROL_GROUP="M" ID="TEXT_OCR" STATE="A" VERSIONABLE="false">
+<foxml:datastreamVersion CREATED="{DATE}" ID="TEXT_OCR.0" LABEL="" MIMETYPE="text/plain" SIZE="2351">
+<foxml:binaryContent>
+              {TEXT_OCR_BASE64}
+</foxml:binaryContent> 
+</foxml:datastreamVersion>
+</foxml:datastream>
+
+<foxml:datastream CONTROL_GROUP="M" ID="ALTO" STATE="A" VERSIONABLE="false">
+<foxml:datastreamVersion CREATED="{DATE}" ID="ALTO.0" LABEL="" MIMETYPE="text/plain" SIZE="39223">
+<foxml:binaryContent> 
+              {ALTO_BASE64}
+</foxml:binaryContent> 
+</foxml:datastreamVersion>
+</foxml:datastream>
+
+<foxml:datastream CONTROL_GROUP="X" ID="BIBLIO_MODS" STATE="A" VERSIONABLE="false">
+<foxml:datastreamVersion CREATED="{DATE}" FORMAT_URI="http://www.loc.gov/mods/v3" ID="BIBLIO_MODS.0" LABEL="BIBLIO_MODS description of current object" MIMETYPE="text/xml" SIZE="724">
+<foxml:xmlContent>
+<mods:modsCollection xmlns:mods="http://www.loc.gov/mods/v3">  
+          <mods:mods xmlns:ns4="info:fedora/fedora-system:def/foxml#" version="3.6">  
+            <mods:identifier type="uuid">{UUID}</mods:identifier>  
+            <mods:typeOfResource>text</mods:typeOfResource>  
+            <mods:note>{RIGHT_LEFT}</mods:note>  
+            <mods:part type="NormalPage"> 
+              <mods:detail type="pageNumber"> 
+                <mods:number>{PAGE_NUMBER}</mods:number> 
+              </mods:detail>  
+              <mods:detail type="pageIndex"> 
+                <mods:number>{PAGE_NUMBER}</mods:number> 
+              </mods:detail> 
+            </mods:part> 
+          </mods:mods> 
+        </mods:modsCollection>
+</foxml:xmlContent>
+</foxml:datastreamVersion>
+</foxml:datastream>
+
+<foxml:datastream CONTROL_GROUP="X" ID="DC" STATE="A" VERSIONABLE="false">
+<foxml:datastreamVersion CREATED="{DATE}" FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" ID="DC.1" LABEL="Dublin Core Record for this object" MIMETYPE="text/xml" SIZE="517">
+<foxml:xmlContent>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>{PAGE_NUMBER}</dc:title>
+  <dc:type>model:page</dc:type>
+  <dc:identifier>uuid:{UUID}</dc:identifier>
+  <dc:rights>policy:public</dc:rights>
+</oai_dc:dc>
+</foxml:xmlContent>
+</foxml:datastreamVersion>
+</foxml:datastream>
+
+<foxml:datastream CONTROL_GROUP="E" ID="POLICY" STATE="A" VERSIONABLE="false">
+<foxml:datastreamVersion CREATED="{DATE}" ID="POLICY.0" LABEL="" MIMETYPE="application/rdf+xml">
+<foxml:contentLocation REF="http://local.fedora.server/fedora/get/policy:public/POLICYDEF" TYPE="URL"/>
+</foxml:datastreamVersion>
+</foxml:datastream>
+
+<foxml:datastream CONTROL_GROUP="X" ID="RELS-EXT" STATE="A" VERSIONABLE="false">
+<foxml:datastreamVersion CREATED="{DATE}" FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0" ID="RELS-EXT.4" LABEL="RDF Statements about this object" MIMETYPE="application/rdf+xml" SIZE="1061">
+<foxml:xmlContent>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about="info:fedora/uuid:{UUID}">
+    <hasModel xmlns="info:fedora/fedora-system:def/model#" rdf:resource="info:fedora/model:page"/>
+    <itemID xmlns="http://www.openarchives.org/OAI/2.0/">uuid:{UUID}</itemID>
+    <file xmlns="http://www.nsdl.org/ontologies/relationships#">{IMAGE_NAME}</file>
+    <policy xmlns="http://www.nsdl.org/ontologies/relationships#">policy:public</policy>
+    <rdf:isMemberOfCollection rdf:resource="info:fedora/{VIRTUAL_COLLECTION}"/>
+  </rdf:Description>
+</rdf:RDF>
+</foxml:xmlContent>
+</foxml:datastreamVersion>
+</foxml:datastream>
+</foxml:digitalObject>

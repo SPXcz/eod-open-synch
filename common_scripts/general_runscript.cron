@@ -1,0 +1,4 @@
+@reboot /home/c1081170/bootScript.sh
+1 0 * * * /home/c1081170/EOD-OPEN-data-synch-module/master/eod.sh
+10 0 * * * /home/c1081170/EOD-OPEN-data-synch-module/MZK/runscript.sh >> /home/c1081170/EOD-OPEN-data-synch-module/MZK/mzk.log
+11 0 * * * /home/c1081170/EOD-OPEN-data-synch-module/UIBK_new/runscript.sh >> /home/c1081170/EOD-OPEN-data-synch-module/UIBK_new/uibk.log

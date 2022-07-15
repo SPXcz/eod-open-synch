@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+    master:
+        build:
+            context: "."
+            dockerfile: "master.Dockerfile"
+        image: "eod_master:latest"
+        container_name: "master_eod"
+        volumes:
+            - ./common_scripts/data:/opt/eod_open_data_synch/data
+            - ./master/harvester.ini:/opt/eod_open_data_synch/harvester.ini
+        command:
+            - chmod u+x /runscript.sh
+            - chmod u+x /opt/eod_open_data_synch/eod.sh
+            - chmod u+x /opt/eod_open_data_synch/harvester.sh
+    mzk:
+        build:
+            context: "."
+            dockerfile: "kramerius.Dockerfile"
+        image: "eod_mzk:latest"
+        container_name: "mzk_manager"
+        volumes:
+            - ./common_scripts/data:/opt/eod_open_data_synch/data
+            - ./MZK/config.ini:/opt/eod_open_data_synch/config.ini
+            - /home/c1081170/s2i-kramerius/import_vol:/opt/eod_open_data_synch/import_vol #Directory with foxml files set for upload. It's a volume for Kramerius.
+        command:
+            - chmod u+x /runscript.sh
+            - chmod u+x /opt/eod_open_data_synch/krameriusHarvester.py
+            - chmod u+x /opt/eod_open_data_synch/uploader.py
